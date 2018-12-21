@@ -7,9 +7,9 @@ jobs:
       - checkout
       - run: yarn
       - run: 
-          name: Zip aws-lambda file.
+          name: zip folder
           command: |
-            zip -r aws-lambda.zip aws-lambda -x "*.DS_Store"
+            zip -r ../aws-lambda.zip ../aws-lambda -x "*.DS_Store"
       - run:
           name: Push zip folde to s3
           command: |

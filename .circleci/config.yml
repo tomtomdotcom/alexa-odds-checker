@@ -9,7 +9,6 @@ jobs:
       - run: 
           name: zip folder
           command: |
-            cd ../
             pwd
             ls
             zip -r aws-lambda.zip aws-lambda -x "*.DS_Store"

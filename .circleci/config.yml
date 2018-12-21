@@ -17,6 +17,7 @@ jobs:
       - run:
           name: Push zip folder to s3
           command: |
+            ls
             aws s3 cp aws-lambda.zip s3://alexa-odds-checker
 
 

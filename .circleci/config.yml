@@ -9,11 +9,10 @@ jobs:
       - run: 
           name: zip folder
           command: |
-            pwd
-            ls
-            zip -r aws-lambda.zip aws-lambda -x "*.DS_Store"
+            cd ../
+            zip -r aws-lambda.zip project -x "*.DS_Store"
       - run:
-          name: Push zip folde to s3
+          name: Push zip folder to s3
           command: |
             aws s3 cp aws-lambda.zip https://s3.console.aws.amazon.com/s3/buckets/alexa-odds-checker
 

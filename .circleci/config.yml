@@ -10,6 +10,7 @@ jobs:
           name: zip folder
           command: |
             cd ../
+            pwd
             zip -r aws-lambda.zip aws-lambda -x "*.DS_Store"
       - run:
           name: Push zip folde to s3

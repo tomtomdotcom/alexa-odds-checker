@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run: yarn
+      - run:
+          name: Install dependencies
+          command: sudo apt-get -y -qq install awscli 
       - run: 
           name: zip folder
           command: |

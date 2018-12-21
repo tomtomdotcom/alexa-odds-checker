@@ -9,7 +9,7 @@ jobs:
       - run: 
           name: Zip aws-lambda file.
           command: |
-            zip -r my-folder.zip my-folder -x "*.DS_Store"
+            zip -r aws-lambda.zip aws-lambda -x "*.DS_Store"
       - run:
           name: Push zip folde to s3
           command: |

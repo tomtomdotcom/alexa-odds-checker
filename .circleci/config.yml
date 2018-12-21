@@ -1,17 +1,19 @@
 version: 2
-  jobs:
-    deploy:
-      steps:
-        - checkout
-        - run: yarn
-        - run: 
-            name: Zip aws-lambda file.
-            command: |
-              zip -r my-folder.zip my-folder -x "*.DS_Store"
-        - run:
-            name: Push zip folde to s3
-            command: |
-              aws s3 cp aws-lambda.zip https://s3.console.aws.amazon.com/s3/buckets/alexa-odds-checker
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+    steps:
+      - checkout
+      - run: yarn
+      - run: 
+          name: Zip aws-lambda file.
+          command: |
+            zip -r my-folder.zip my-folder -x "*.DS_Store"
+      - run:
+          name: Push zip folde to s3
+          command: |
+            aws s3 cp aws-lambda.zip https://s3.console.aws.amazon.com/s3/buckets/alexa-odds-checker
 
 
 
